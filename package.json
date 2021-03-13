@@ -1,0 +1,48 @@
+{
+    "name": "codeforces-io",
+    "version": "1.0.0",
+    "description": "Codforces IO functions",
+    "types": "./dist/esm/index.d.ts",
+    "main": "./dist/umd/index.min.js",
+    "module": "./dist/esm/index.js",
+    "files": [
+        "dist/esm/*",
+        "dist/umd/*",
+        "dist/web/*"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:web": "webpack --config ./webpack.config.umd.js ",
+        "build:umd": "webpack --config ./webpack.config.web.js",
+        "build:esm": "tsc -p tsconfig.json --declaration --outDir ./dist/esm",
+        "build:all": "npm-run-all --parallel build:esm build:web build:umd"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/IP-Algorithmics/CodeForcesIO.git"
+    },
+    "keywords": [
+        "Codeforces",
+        "IO",
+        "readline",
+        "print"
+    ],
+    "author": "Iulian Preda",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/IP-Algorithmics/CodeForcesIO/issues"
+    },
+    "homepage": "https://github.com/IP-Algorithmics/CodeForcesIO#readme",
+    "dependencies": {
+        "n-readlines": "^1.0.1"
+    },
+    "devDependencies": {
+        "@types/n-readlines": "^1.0.1",
+        "@types/node": "^14.14.34",
+        "npm-run-all": "^4.1.5",
+        "ts-loader": "^8.0.17",
+        "typescript": "^4.2.2",
+        "webpack": "^5.24.4",
+        "webpack-cli": "^4.5.0"
+    }
+}
