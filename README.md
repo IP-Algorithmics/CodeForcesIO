@@ -2,6 +2,10 @@
 
 Small package to mock Codeforces Javascript IO functions.
 
+
+[![Build](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/build.yml)
+[![Test](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/test.yml)
+
 # Intro
 
 Codeforces for Javascript/Typescript uses `readLine()` and `print()` functions for input and output to the standard input/console.
