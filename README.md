@@ -2,7 +2,6 @@
 
 Small package to mock Codeforces Javascript IO functions.
 
-
 [![Build](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/build.yml)
 [![Test](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/test.yml)
 
@@ -20,10 +19,10 @@ The functions can be imported both as ES6 modules or using the `require` functio
 
 ```javascript
 // using ES6 modules import
-import { nextLine, print } from 'codeforces-io';
+import { nextLine, print } from '@ip-algorithmics/codeforces-io';
 
 // using require
-const codeForcesIO = require('codeforces-io');
+const codeForcesIO = require('@ip-algorithmics/codeforces-io');
 const nextLine = codeForcesIO.nextLine;
 const print = codeForcesIO.print;
 ```
@@ -45,7 +44,7 @@ for (let i = 0; i < n; i++) {
 If you want to change the file path you must wrap the function inside your own.
 
 ```javascript
-import { nextLine as nextLineCustom } from 'codeforces-io';
+import { nextLine as nextLineCustom } from '@ip-algorithmics/codeforces-io';
 
 function nextLine() {
     return nextLineCustom(filePath); // where filePath is the desired path to your file
@@ -54,7 +53,7 @@ function nextLine() {
 // rest of the code
 
 // alternatively using require
-const codeForcesIO = require('codeforces-io');
+const codeForcesIO = require('@ip-algorithmics/codeforces-io');
 const nextLineCustom = codeForcesIO.nextLine;
 const print = codeForcesIO.print;
 
@@ -104,7 +103,7 @@ This is the input
 ```
 
 ```javascript
-import { nextLine, print } from 'codeforces-io';
+import { nextLine, print } from '@ip-algorithmics/codeforces-io';
 
 let firstLine = nextLine();
 print(firstLine); //prints: This is the input
@@ -120,7 +119,7 @@ Statement: given the input - first line is the number of cases, next lines are t
 ```
 
 ```javascript
-import { nextLine, print } from 'codeforces-io';
+import { nextLine, print } from '@ip-algorithmics/codeforces-io';
 
 let numberOfLines = parseInt(nextLine(), 10);
 for (let i = 0; i < numberOfLines; i++) {

@@ -67,5 +67,5 @@
     },
     "compileOnSave": true,
     "include": ["src/**/*.ts"],
-    "exclude": ["node_modules", "**/*.spec.ts"]
+    "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }

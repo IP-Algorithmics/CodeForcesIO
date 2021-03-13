@@ -1,21 +1,19 @@
 {
     "name": "@ip-algorithmics/codeforces-io",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Codeforces IO functions",
     "types": "./dist/esm/index.d.ts",
-    "main": "./dist/cjs/index.js",
+    "main": "./dist/umd/index.min.js",
     "module": "./dist/esm/index.js",
     "files": [
-        "dist/esm/*.js",
-        "dist/esm/*.ts",
-        "dist/cjs/*.ts",
-        "dist/cjs/*.js"
+        "dist/esm/*",
+        "dist/umd/*"
     ],
     "scripts": {
         "test": "jest",
-        "build:cjs": "tsc -p tsconfig.json --declaration --outDir ./dist/cjs --module commonjs",
+        "build:umd": "webpack",
         "build:esm": "tsc -p tsconfig.json --declaration --outDir ./dist/esm",
-        "build:all": "npm-run-all --parallel build:esm build:cjs"
+        "build:all": "npm-run-all --parallel build:esm build:umd"
     },
     "repository": {
         "type": "git",
