@@ -1,21 +1,19 @@
 {
-    "name": "codeforces-io",
+    "name": "@ip-algorithmics/codeforces-io",
     "version": "1.0.0",
     "description": "Codforces IO functions",
     "types": "./dist/esm/index.d.ts",
-    "main": "./dist/umd/index.min.js",
+    "main": "./dist/cjs/index.js",
     "module": "./dist/esm/index.js",
     "files": [
         "dist/esm/*",
-        "dist/umd/*",
-        "dist/web/*"
+        "dist/cjs/*"
     ],
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build:web": "webpack --config ./webpack.config.umd.js ",
-        "build:umd": "webpack --config ./webpack.config.web.js",
+        "test": "jest",
+        "build:cjs": "tsc -p tsconfig.json --declaration --outDir ./dist/cjs --module commonjs",
         "build:esm": "tsc -p tsconfig.json --declaration --outDir ./dist/esm",
-        "build:all": "npm-run-all --parallel build:esm build:web build:umd"
+        "build:all": "npm-run-all --parallel build:esm build:cjs"
     },
     "repository": {
         "type": "git",
@@ -37,10 +35,14 @@
         "n-readlines": "^1.0.1"
     },
     "devDependencies": {
+        "@types/jest": "^26.0.20",
         "@types/n-readlines": "^1.0.1",
         "@types/node": "^14.14.34",
+        "jest": "^26.6.3",
         "npm-run-all": "^4.1.5",
+        "ts-jest": "^26.5.3",
         "ts-loader": "^8.0.17",
+        "ts-node": "^9.1.1",
         "typescript": "^4.2.2",
         "webpack": "^5.24.4",
         "webpack-cli": "^4.5.0"

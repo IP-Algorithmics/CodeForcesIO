@@ -1,6 +1,6 @@
 import lineByLine from 'n-readlines';
 
-let liner;
+let liner: lineByLine;
 
 export function nextLine(path = './input.txt'): string {
     if (!liner) liner = new lineByLine(path);

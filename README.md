@@ -118,7 +118,7 @@ Statement: given the input - first line is the number of cases, next lines are t
 ```javascript
 import { nextLine, print } from 'codeforces-io';
 
-let numberOfLines = nextLine();
+let numberOfLines = parseInt(nextLine(), 10);
 for (let i = 0; i < numberOfLines; i++) {
     let x = nextLine()
         .trim()
