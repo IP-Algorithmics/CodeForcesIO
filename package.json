@@ -1,13 +1,15 @@
 {
     "name": "@ip-algorithmics/codeforces-io",
     "version": "1.0.0",
-    "description": "Codforces IO functions",
+    "description": "Codeforces IO functions",
     "types": "./dist/esm/index.d.ts",
     "main": "./dist/cjs/index.js",
     "module": "./dist/esm/index.js",
     "files": [
-        "dist/esm/*",
-        "dist/cjs/*"
+        "dist/esm/*.js",
+        "dist/esm/*.ts",
+        "dist/cjs/*.ts",
+        "dist/cjs/*.js"
     ],
     "scripts": {
         "test": "jest",
