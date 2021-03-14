@@ -8,10 +8,10 @@ test('read input', () => {
     });
     expect(fileNames.some((x) => x === 'input.txt'));
 
-    const numberOfLines = parseInt(nextLine(__dirname + '/input.txt'), 10);
+    const numberOfLines = parseInt(nextLine(), 10);
     expect(numberOfLines === 5);
     for (let i = 0; i < numberOfLines; i++) {
-        const x = parseInt(nextLine(__dirname + '/input.txt'), 10);
+        const x = parseInt(nextLine(), 10);
         expect(x === i);
     }
 });

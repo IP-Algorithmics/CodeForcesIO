@@ -1,6 +1,6 @@
 {
     "name": "@ip-algorithmics/codeforces-io",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Codeforces IO functions",
     "types": "./dist/esm/index.d.ts",
     "main": "./dist/umd/index.min.js",
