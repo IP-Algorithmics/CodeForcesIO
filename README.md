@@ -4,6 +4,10 @@ Small package to mock Codeforces Javascript IO functions.
 
 [![Build](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/build.yml)
 [![Test](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/test.yml)
+[![NPM](https://nodei.co/npm/@ip-algorithmics/codeforces-io.png?mini=true)](https://npmjs.org/package/@ip-algorithmics/codeforces-io)
+
+# Install 
+`npm i @ip-algorithmics/codeforces-io`
 
 # Intro
 
