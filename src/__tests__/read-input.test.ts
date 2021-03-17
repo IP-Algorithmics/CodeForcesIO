@@ -1,4 +1,4 @@
-import { nextLine } from '../';
+import { readline } from '../';
 
 test('read input', () => {
     const fs = require('fs');
@@ -8,10 +8,10 @@ test('read input', () => {
     });
     expect(fileNames.some((x) => x === 'input.txt'));
 
-    const numberOfLines = parseInt(nextLine(), 10);
+    const numberOfLines = parseInt(readline(), 10);
     expect(numberOfLines === 5);
     for (let i = 0; i < numberOfLines; i++) {
-        const x = parseInt(nextLine(), 10);
+        const x = parseInt(readline(), 10);
         expect(x === i);
     }
 });

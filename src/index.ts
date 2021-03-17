@@ -14,7 +14,7 @@ const pathToInput = path.format({
  * @param path - Path to the file. Optional, defaults to ./input.txt
  * @returns return the next line of the read file or empty string on End of File - This is by design, on Algorithmic problems inputs are usually contiguous
  */
-export function nextLine(path = pathToInput): string {
+export function readline(path = pathToInput): string {
     if (!liner) liner = new lineByLine(path);
     const line = liner.next();
     return line === false ? '' : line.toString('ascii');
@@ -27,3 +27,6 @@ export function nextLine(path = pathToInput): string {
 export function print(...args: any[]) {
     console.log(...args);
 }
+
+const konsole = console;
+export { konsole as console };

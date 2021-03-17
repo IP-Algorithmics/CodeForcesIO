@@ -6,12 +6,13 @@ Small package to mock Codeforces Javascript IO functions.
 [![Test](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/IP-Algorithmics/CodeForcesIO/actions/workflows/test.yml)
 [![NPM](https://nodei.co/npm/@ip-algorithmics/codeforces-io.png?mini=true)](https://npmjs.org/package/@ip-algorithmics/codeforces-io)
 
-# Install 
+# Install
+
 `npm i @ip-algorithmics/codeforces-io`
 
 # Intro
 
-Codeforces for Javascript/Typescript uses `readLine()` and `print()` functions for input and output to the standard input/console.
+Codeforces for Javascript/Typescript uses `readline()` and `print()` functions for input and output to the standard input/console.
 
 # How to use
 
@@ -23,24 +24,24 @@ The functions can be imported both as ES6 modules or using the `require` functio
 
 ```javascript
 // using ES6 modules import
-import { nextLine, print } from '@ip-algorithmics/codeforces-io';
+import { readline, print } from '@ip-algorithmics/codeforces-io';
 
 // using require
 const codeForcesIO = require('@ip-algorithmics/codeforces-io');
-const nextLine = codeForcesIO.nextLine;
+const readline = codeForcesIO.readline;
 const print = codeForcesIO.print;
 ```
 
-## nextLine()
+## readline()
 
 This function returns the next line read from the `input.txt` file from the same folder.
 You can iterate through the file calling it again.
 
 ```javascript
-let n = nextLine();
+let n = readline();
 
 for (let i = 0; i < n; i++) {
-    let x = nextLine();
+    let x = readline();
     // do something with x
 }
 ```
@@ -48,43 +49,43 @@ for (let i = 0; i < n; i++) {
 If you want to change the file path you must wrap the function inside your own.
 
 ```javascript
-import { nextLine as nextLineCustom } from '@ip-algorithmics/codeforces-io';
+import { readline as readlineCustom } from '@ip-algorithmics/codeforces-io';
 
-function nextLine() {
-    return nextLineCustom(filePath); // where filePath is the desired path to your file
+function readline() {
+    return readlineCustom(filePath); // where filePath is the desired path to your file
 }
 
 // rest of the code
 
 // alternatively using require
 const codeForcesIO = require('@ip-algorithmics/codeforces-io');
-const nextLineCustom = codeForcesIO.nextLine;
+const readlineCustom = codeForcesIO.readline;
 const print = codeForcesIO.print;
 
-function nextLine() {
-    return nextLineCustom(filePath); // where filePath is the desired path to your file
+function readline() {
+    return readlineCustom(filePath); // where filePath is the desired path to your file
 }
 ```
 
 ### Special mention
 
-`nextLine()` can iterate through the entire file without needing the user to know the number of actual lines.
+`readline()` can iterate through the entire file without needing the user to know the number of actual lines.
 Codeforces provides it for lower level languages like C.
 
 If you chose to iterate it like this, the end of file will return the empty string('').
 
 ```javascript
 let line;
-while ((line = nextLine() && line != '')) {
+while ((line = readline() && line != '')) {
     // do something with line
 }
 
 // or
 
-let line = nextLine();
+let line = readline();
 while (line != '') {
     // do something with line
-    line = nextLine();
+    line = readline();
 }
 ```
 
@@ -107,9 +108,9 @@ This is the input
 ```
 
 ```javascript
-import { nextLine, print } from '@ip-algorithmics/codeforces-io';
+import { readline, print } from '@ip-algorithmics/codeforces-io';
 
-let firstLine = nextLine();
+let firstLine = readline();
 print(firstLine); //prints: This is the input
 ```
 
@@ -123,11 +124,11 @@ Statement: given the input - first line is the number of cases, next lines are t
 ```
 
 ```javascript
-import { nextLine, print } from '@ip-algorithmics/codeforces-io';
+import { readline, print } from '@ip-algorithmics/codeforces-io';
 
-let numberOfLines = parseInt(nextLine(), 10);
+let numberOfLines = parseInt(readline(), 10);
 for (let i = 0; i < numberOfLines; i++) {
-    let x = nextLine()
+    let x = readline()
         .trim()
         .split(',')
         .map((x) => parseInt(x, 10));
