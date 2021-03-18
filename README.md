@@ -30,6 +30,9 @@ import { readline, print } from '@ip-algorithmics/codeforces-io';
 const codeForcesIO = require('@ip-algorithmics/codeforces-io');
 const readline = codeForcesIO.readline;
 const print = codeForcesIO.print;
+
+// alternative
+const { readline, print, console } = require('@ip-algorithmics/codeforces-io');
 ```
 
 ## readline()
@@ -98,6 +101,10 @@ let output = 'this is the output';
 print(output);
 ```
 
+## console
+
+If you use Typescript you will notice that the `print` function is already declared in the `DOM` library. To circumvent this issue I exported `console.log` as `print` and the entire `console` object as `console` for the cases where is needed for tracing or debugging.
+
 # Code example
 
 Statement: given the input, print it
@@ -139,3 +146,7 @@ for (let i = 0; i < numberOfLines; i++) {
     // do something with x
 }
 ```
+
+# Additional Resources
+
+[Codeforces - How to use Typescript/Javascript like a pro](https://dev.to/ipreda/codeforces-how-to-use-typescript-javascript-like-a-pro-1cjo)
