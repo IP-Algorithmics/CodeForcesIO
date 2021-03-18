@@ -94,16 +94,23 @@ while (line != '') {
 
 ## print()
 
-This function just prints to the console the parameter. It is a glorified `console.log`
+This function just prints to the console the parameter. It is a glorified `console.log` that saves whatever is printed in memory. You can then use `testOutput()` to print to the screen if the test passed or failed.
 
 ```javascript
 let output = 'this is the output';
 print(output);
 ```
 
+## testOutput()
+
+This is an optional function reads the `output.txt` from the same folder and iterates through the `print` statements to check if they match the outputs.
+You can set a different path passing it as a parameter.
+
 ## console
 
 If you use Typescript you will notice that the `print` function is already declared in the `DOM` library. To circumvent this issue I exported `console.log` as `print` and the entire `console` object as `console` for the cases where is needed for tracing or debugging.
+
+##
 
 # Code example
 
@@ -122,31 +129,46 @@ print(firstLine); //prints: This is the input
 ```
 
 Statement: given the input - first line is the number of cases, next lines are the number describing geo points separated by comma. Find and print the geo point that is not valid.
+`input.txt`
 
 ```text
-// input.txt
--47, 23
+3
+-47,23
 34,56
 91,82
 ```
 
+`output.txt`
+
+```text
+-47,23
+```
+
 ```javascript
-import { readline, print } from '@ip-algorithmics/codeforces-io';
+const { readline, print, testOutput } = require('@ip-algorithmics/codeforces-io');
 
 let numberOfLines = parseInt(readline(), 10);
 for (let i = 0; i < numberOfLines; i++) {
     let x = readline()
         .trim()
         .split(',')
-        .map((x) => parseInt(x, 10));
-    if (x[0] < 90 || x[0] > 90 || x[1] < 90 || x[1] > 90) {
-        print(x);
+        .map((y) => parseInt(y, 10));
+
+    if ((x[0] < 90 && x[0] > -90) || (x[1] < 90 && x[1] > -90)) {
+        print(x[0] + ',' + x[1]);
         break;
     }
-    // do something with x
 }
+
+testOutput(); // Result Passed
 ```
 
 # Additional Resources
 
 [Codeforces - How to use Typescript/Javascript like a pro](https://dev.to/ipreda/codeforces-how-to-use-typescript-javascript-like-a-pro-1cjo)
+
+# Changelog
+
+## 1.0.12
+
+Added `testOutput()` function
