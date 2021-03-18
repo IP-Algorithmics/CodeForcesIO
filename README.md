@@ -23,7 +23,7 @@ This library exposes the functions in a manner that allows you to just copy the 
 The functions can be imported both as ES6 modules or using the `require` function. The difference lays in how you access it.
 
 ```javascript
-// using ES6 modules import
+// using ES6 modules import - you need to have the "module" property set to "commonjs" in the package.json
 import { readline, print } from '@ip-algorithmics/codeforces-io';
 
 // using require
@@ -162,6 +162,10 @@ for (let i = 0; i < numberOfLines; i++) {
 
 testOutput(); // Result Passed
 ```
+
+# Future plans
+
+-   Problem folder generator - generates folder, input.txt, output.txt, index.ts or index.js, in input puts link to problem, and template imports, and test
 
 # Additional Resources
 
