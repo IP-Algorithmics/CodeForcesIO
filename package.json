@@ -1,6 +1,6 @@
 {
     "name": "@ip-algorithmics/codeforces-io",
-    "version": "1.0.13",
+    "version": "1.1.1",
     "description": "Codeforces IO functions",
     "types": "./dist/esm/index.d.ts",
     "main": "./dist/cjs/index.js",
@@ -9,6 +9,9 @@
         "dist/esm/*",
         "dist/cjs/*"
     ],
+    "bin": {
+        "cf": "./dist/cjs/generator.js"
+    },
     "scripts": {
         "test": "jest",
         "build:cjs": "tsc -p tsconfig.json --declaration --outDir ./dist/cjs --module commonjs",
@@ -32,12 +35,14 @@
     },
     "homepage": "https://github.com/IP-Algorithmics/CodeForcesIO#readme",
     "dependencies": {
-        "n-readlines": "^1.0.1"
+        "n-readlines": "^1.0.1",
+        "yargs": "^15.4.1"
     },
     "devDependencies": {
         "@types/jest": "^26.0.20",
         "@types/n-readlines": "^1.0.1",
         "@types/node": "^14.14.34",
+        "@types/yargs": "^15.0.13",
         "jest": "^26.6.3",
         "npm-run-all": "^4.1.5",
         "ts-jest": "^26.5.3",

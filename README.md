@@ -110,8 +110,6 @@ You can set a different path passing it as a parameter.
 
 If you use Typescript you will notice that the `print` function is already declared in the `DOM` library. To circumvent this issue I exported `console.log` as `print` and the entire `console` object as `console` for the cases where is needed for tracing or debugging.
 
-##
-
 # Code example
 
 Statement: given the input, print it
@@ -163,9 +161,31 @@ for (let i = 0; i < numberOfLines; i++) {
 testOutput(); // Result Passed
 ```
 
+# Solution generator
+
+You can use this feature in 2 ways:
+
+-   Without installing globally the library using `npx @ip-algorithmics/codeforces-io`.
+-   Installing globally the library `npm i -g @ip-algorithmics/codeforces-io` and then using `cf` in the command line.
+
+## Parameters
+
+-   `path` - the path to the solution. E.g. `./ProblemA`. Defaults to `./New Solution`.
+-   `--f` or `--file` - the name of the js/ts file to create. E.g. `mainFile`. Defaults to `index`.
+-   `--js` - Uses `.js` extension instead of `.ts`
+-   `--cjs` - Uses `require` instead of ES6 `import`/`export`
+-   `--c` or `--comment` - Adds a comment at the beginning of the file. E.g. the link to the problem.
+
+## Usage examples
+
+-   `npx @ip-algorithmics/codeforces-io ./ProblemA --js --cjs`
+-   `cf ./ProblemA --js --cjs`
+-   `cf ./ProblemA`
+-   `cf ./ProblemA --c http://link.to.problem`
+
 # Future plans
 
--   Problem folder generator - generates folder, input.txt, output.txt, index.ts or index.js, in input puts link to problem, and template imports, and test
+-   Problem folder generator - generates folder, input.txt, output.txt, index.ts or index.js, in input puts link to problem, and template imports, and test - Completed
 
 # Additional Resources
 
@@ -173,6 +193,10 @@ testOutput(); // Result Passed
 
 # Changelog
 
+## 1.1.1
+
+Added solution generator capabilities.
+
 ## 1.0.12
 
-Added `testOutput()` function
+Added `testOutput()` function.
