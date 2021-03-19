@@ -183,12 +183,21 @@ You can use this feature in 2 ways:
 -   `cf ./ProblemA`
 -   `cf ./ProblemA --c http://link.to.problem`
 
+# Typescript ideas
+
+Codforces uses ES5 internally in both node and V8 so it has problems with `const`, `let` and features like spreading an array.
+Personally I found that the best solution is to:
+
+-   add in the `package.json` the following script ` "build": "tsc --module es6 --moduleResolution node"` using it like `npm run build <path>`
+-   manually run `tsc --module es6 --moduleResolution node <path>`
+
 # Future plans
 
 -   Problem folder generator - generates folder, input.txt, output.txt, index.ts or index.js, in input puts link to problem, and template imports, and test - Completed
 
 # Additional Resources
 
+[CodeForces Solutions](https://github.com/IP-Algorithmics/CodeForces)
 [Codeforces - How to use Typescript/Javascript like a pro](https://dev.to/ipreda/codeforces-how-to-use-typescript-javascript-like-a-pro-1cjo)
 
 # Changelog
