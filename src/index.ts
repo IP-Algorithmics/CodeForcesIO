@@ -45,10 +45,21 @@ export function print(...args: any[]) {
 export function testOutput(path = pathToOutput) {
     liner = new lineByLine(path);
     let hasPassed = true;
-    printedStatements.forEach((statement) => {
-        const output = readline(path);
-        if (output !== statement) hasPassed = false;
-    });
+
+    let lineNumber = 0;
+    let line = readline();
+
+    while (line != '') {
+        
+        if (line !== printedStatements[lineNumber]) {
+            hasPassed = false;
+            break;
+        }
+
+        line = readline();
+        lineNumber++;
+    }
+
     if (hasPassed) {
         console.log('\x1b[36m%s\x1b[0m', 'Passed');
     } else {
